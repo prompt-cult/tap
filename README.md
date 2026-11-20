@@ -1,11 +1,17 @@
-# prompt-cult/homebrew-tap
+# prompt-cult/tap
 
-Homebrew tap for [git-veil](https://prompt-cult.github.io/git-veil/) — secret management for git repositories using age X25519 encryption.
+Homebrew tap for the **prompt-cult** org. One tap, all prompt-cult formulae.
 
 ## Install
 
 ```sh
-brew install prompt-cult/homebrew-tap/git-veil
+brew tap prompt-cult/tap
 ```
 
-Upstream binaries and checksums live on the [git-veil releases page](https://github.com/prompt-cult/git-veil/releases).
+## Formulae
+
+| Formula | Description | Install |
+|---|---|---|
+| git-veil | Secret management for git repositories using age X25519 encryption | `brew install prompt-cult/tap/git-veil` |
+
+Upstream binaries and checksums live on each project's GitHub releases page.

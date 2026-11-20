@@ -4,7 +4,6 @@
 class GitVeil < Formula
   desc "Secret management for git repositories using age X25519 encryption"
   homepage "https://prompt-cult.github.io/git-veil/"
-  version "0.17.1"
   license "GPL-3.0-or-later"
 
   on_macos do

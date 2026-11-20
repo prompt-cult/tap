@@ -1,3 +1,6 @@
+# typed: false
+# frozen_string_literal: true
+
 class GitVeil < Formula
   desc "Secret management for git repositories using age X25519 encryption"
   homepage "https://prompt-cult.github.io/git-veil/"
@@ -15,8 +18,14 @@ class GitVeil < Formula
     end
   end
   on_linux do
-    url "https://github.com/prompt-cult/git-veil/releases/download/v#{version}/git-veil-linux-x86_64"
-    sha256 "743b9878a612e3858772d6fcfb84519e4864745d19403d7f9c1ce09ef6ffca33"
+    on_arm do
+      url "https://github.com/prompt-cult/git-veil/releases/download/v#{version}/git-veil-linux-x86_64"
+      sha256 "743b9878a612e3858772d6fcfb84519e4864745d19403d7f9c1ce09ef6ffca33"
+    end
+    on_intel do
+      url "https://github.com/prompt-cult/git-veil/releases/download/v#{version}/git-veil-linux-x86_64"
+      sha256 "743b9878a612e3858772d6fcfb84519e4864745d19403d7f9c1ce09ef6ffca33"
+    end
   end
 
   def install

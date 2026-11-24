@@ -6,6 +6,13 @@ class GitVeil < Formula
   homepage "https://prompt-cult.github.io/git-veil/"
   license "GPL-3.0-or-later"
 
+  # The top-level url and sha256 are the Linux channel: one
+  # x86_64 binary, no aarch64 asset exists. on_macos overrides
+  # them for macOS. on_linux blocks may not carry url or sha256
+  # (brew audit), so the top level is the only audit-clean home.
+  url "https://github.com/prompt-cult/git-veil/releases/download/v0.17.4/git-veil-linux-x86_64"
+  sha256 "163038226ab3811b8de4e9d67446287e211ecad1015242639e6f47335d13d553"
+
   on_macos do
     on_arm do
       url "https://github.com/prompt-cult/git-veil/releases/download/v0.17.4/git-veil-macos-aarch64"
@@ -15,12 +22,6 @@ class GitVeil < Formula
       url "https://github.com/prompt-cult/git-veil/releases/download/v0.17.4/git-veil-macos-x86_64"
       sha256 "e2939041652516e81f854f6ac154fe01faffebd6de5072e4eabd7f2c1034f1b0"
     end
-  end
-  # Linux ships one x86_64 binary; no aarch64 asset exists, so the
-  # block stays unconditional rather than pretending on_arm works.
-  on_linux do
-    url "https://github.com/prompt-cult/git-veil/releases/download/v0.17.4/git-veil-linux-x86_64"
-    sha256 "163038226ab3811b8de4e9d67446287e211ecad1015242639e6f47335d13d553"
   end
 
   def install

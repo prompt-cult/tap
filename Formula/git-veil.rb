@@ -4,14 +4,14 @@
 class GitVeil < Formula
   desc "Secret management for git repositories using age X25519 encryption"
   homepage "https://prompt-cult.github.io/git-veil/"
-  license "GPL-3.0-or-later"
-
   # The top-level url and sha256 are the Linux channel: one
   # x86_64 binary, no aarch64 asset exists. on_macos overrides
   # them for macOS. on_linux blocks may not carry url or sha256
-  # (brew audit), so the top level is the only audit-clean home.
+  # (brew audit), so the top level is the only audit-clean home,
+  # and url precedes license per rubocop component order.
   url "https://github.com/prompt-cult/git-veil/releases/download/v0.17.4/git-veil-linux-x86_64"
   sha256 "163038226ab3811b8de4e9d67446287e211ecad1015242639e6f47335d13d553"
+  license "GPL-3.0-or-later"
 
   on_macos do
     on_arm do

@@ -8,23 +8,19 @@ class GitVeil < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/prompt-cult/git-veil/releases/download/v0.17.3/git-veil-macos-aarch64"
-      sha256 "d05ed2fd25ac1203779367e080ffa4d5f78d1f31ae3d70c3eaf865db2dfce6ab"
+      url "https://github.com/prompt-cult/git-veil/releases/download/v0.17.4/git-veil-macos-aarch64"
+      sha256 "4aa5c915f2f51d562bc7d80017d37a904727d11db4d250c9971af63a369b5e3b"
     end
     on_intel do
-      url "https://github.com/prompt-cult/git-veil/releases/download/v0.17.3/git-veil-macos-x86_64"
-      sha256 "df1442277f2c30ebf73d146c6502bafbb005a2e6ce464e8e4515103e8e6f094f"
+      url "https://github.com/prompt-cult/git-veil/releases/download/v0.17.4/git-veil-macos-x86_64"
+      sha256 "e2939041652516e81f854f6ac154fe01faffebd6de5072e4eabd7f2c1034f1b0"
     end
   end
+  # Linux ships one x86_64 binary; no aarch64 asset exists, so the
+  # block stays unconditional rather than pretending on_arm works.
   on_linux do
-    on_arm do
-      url "https://github.com/prompt-cult/git-veil/releases/download/v0.17.3/git-veil-linux-x86_64"
-      sha256 "1424101f00ba5f017801670a039f9acc6c28eb93226d14bf3c36c4a9eb916422"
-    end
-    on_intel do
-      url "https://github.com/prompt-cult/git-veil/releases/download/v0.17.3/git-veil-linux-x86_64"
-      sha256 "1424101f00ba5f017801670a039f9acc6c28eb93226d14bf3c36c4a9eb916422"
-    end
+    url "https://github.com/prompt-cult/git-veil/releases/download/v0.17.4/git-veil-linux-x86_64"
+    sha256 "163038226ab3811b8de4e9d67446287e211ecad1015242639e6f47335d13d553"
   end
 
   def install
@@ -32,6 +28,6 @@ class GitVeil < Formula
   end
 
   test do
-    assert_match "git-veil #{version}", shell_output("\#{bin}/git-veil --version")
+    assert_match "git-veil #{version}", shell_output("#{bin}/git-veil --version")
   end
 end

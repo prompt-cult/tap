@@ -9,18 +9,18 @@ class GitVeil < Formula
   # them for macOS. on_linux blocks may not carry url or sha256
   # (brew audit), so the top level is the only audit-clean home,
   # and url precedes license per rubocop component order.
-  url "https://github.com/prompt-cult/git-veil/releases/download/v0.17.4/git-veil-linux-x86_64"
-  sha256 "163038226ab3811b8de4e9d67446287e211ecad1015242639e6f47335d13d553"
-  license "GPL-3.0-or-later"
+  url "https://github.com/prompt-cult/git-veil/releases/download/v0.17.6/git-veil-linux-x86_64"
+  sha256 "d64dec3418e4b97f6ff221f983481f894e2875b5db59c23d0a3de3a2e933c2de"
+  license any_of: ["MIT", "Apache-2.0"]
 
   on_macos do
     on_arm do
-      url "https://github.com/prompt-cult/git-veil/releases/download/v0.17.4/git-veil-macos-aarch64"
-      sha256 "4aa5c915f2f51d562bc7d80017d37a904727d11db4d250c9971af63a369b5e3b"
+      url "https://github.com/prompt-cult/git-veil/releases/download/v0.17.6/git-veil-macos-aarch64"
+      sha256 "e57c34115357805b1ac7570bfa429c00fb6499a023f0d2f809261264c2f28c7c"
     end
     on_intel do
-      url "https://github.com/prompt-cult/git-veil/releases/download/v0.17.4/git-veil-macos-x86_64"
-      sha256 "e2939041652516e81f854f6ac154fe01faffebd6de5072e4eabd7f2c1034f1b0"
+      url "https://github.com/prompt-cult/git-veil/releases/download/v0.17.6/git-veil-macos-x86_64"
+      sha256 "d08500564046fffbccadf8f5fd289d556339cc4b31d5fbc4854e4b9cace25a63"
     end
   end
 
